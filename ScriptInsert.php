@@ -5,9 +5,14 @@
 
     $skipass_db = new mysqli("127.0.0.1","root","","skipass_porret_morier");
 
-    mysqli_query( $skipass_db,"INSERT INTO 'carte' ('idCarte','numCarte','dateDebutValide','dateFinValide') VALUES
-        (1,$card_number, $valid_start_date, $valid_end_date);
-    ");
+    
+    $sql = "INSERT INTO carte (numCarte, dateDebutValide, dateFinValide)
+            VALUES ('$card_number', '$valid_start_date', '$valid_end_date')";
 
-    echo($skipass_db->connect_error());
+    if (!$skipass_db->query($sql)) {
+        echo "Erreur SQL : " . $skipass_db->error;
+    } else {
+        echo "Insertion réussie ✅";
+    }
+
 ?>
