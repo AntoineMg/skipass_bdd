@@ -9,7 +9,5 @@
         (1,$card_number, $valid_start_date, $valid_end_date);
     ");
 
-    if ($skipass_db->connect_error) {
-        die("Connection failed: " . $skipass_db->connect_error);
-    }
+    echo($skipass_db->connect_error());
 ?>
