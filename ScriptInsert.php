@@ -5,13 +5,13 @@
 
     $skipass_db = new mysqli("127.0.0.1","root","","skipass_porret_morier");
     
-    $sql = "INSERT INTO carte (numCarte, dateDebutValide, dateFinValide)
+    $sql_query = "INSERT INTO carte (numCarte, dateDebutValide, dateFinValide)
             VALUES ('$card_number', '$valid_start_date', '$valid_end_date')";
 
-    if (!$skipass_db->query($sql)) {
-        echo "Erreur SQL : " . $skipass_db->error;
+    if (!$skipass_db->query($sql_query)) {
+        echo "SQL ERROR : " . $skipass_db->error;
     } else {
-        echo "Insertion réussie ✅";
+        echo "ajout de carte reussi";
     }
 
 ?>
