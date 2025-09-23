@@ -6,6 +6,7 @@ $query = "SELECT * FROM carte";
 $result = $skipass_db->query($query);
 $enreg = $result->fetch_row();
 ?>
+
 <html>
 <table border="1">
     <tr>
