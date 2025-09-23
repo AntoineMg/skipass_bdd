@@ -11,7 +11,7 @@
     if (!$skipass_db->query($sql_query)) {
         echo "SQL ERROR : " . $skipass_db->error;
     } else {
-        echo "ajout de carte reussi";
+        echo "🤖 Carte n°" . $card_number . " ajoutée avec grand succès 👍";
     }
 
 ?>
