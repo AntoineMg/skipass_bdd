@@ -14,7 +14,7 @@ if ($skipass_db->connect_errno) {
     die("Erreur connexion BDD : " . $skipass_db->connect_error);
 }
 
-if ($_SESSION['logged_in']) {
+if (!empty($_SESSION['logged_in'])) {
     header("Location: dashboard.php");
     exit;
 }
