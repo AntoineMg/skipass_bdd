@@ -47,7 +47,7 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
 
       <!-- on transmet la valeur de la première colonne (supposée clé primaire) -->
       <td>
-        <form method="post" action="delete.php" onsubmit="return confirm('Supprimer cette ligne ?');">
+        <form method="post" action="script_delete.php" onsubmit="return confirm('Supprimer cette ligne ?');">
           <input type="hidden" name="id" value="<?= htmlspecialchars($row[$fields[0]->name]) ?>">
           <input type="submit" value="Supprimer">
         </form>
@@ -57,7 +57,7 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
   </table>
 
   <br>
-  <a href="Menu.html">Menu</a>
+  <a href="index.html">Menu</a>
 </body>
 </html>
 

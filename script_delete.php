@@ -10,7 +10,7 @@ if ($skipass_db->connect_errno) {
 }
 
 if (!isset($_POST['id'])) {
-    header('Location: test.php'); // retourne à la liste si aucun id
+    header('Location: display_cards.php'); // retourne à la liste si aucun id
     exit;
 }
 
@@ -52,5 +52,5 @@ if (!$stmt->execute()) {
 $stmt->close();
 $skipass_db->close();
 
-header("Location: test.php");
+header("Location: display_cards.php");
 exit;
