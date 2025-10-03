@@ -1,4 +1,12 @@
 <?php
+
+	session_start();
+
+	if (empty($_SESSION['logged_in'])) {
+		header("Location: login.php");
+		exit;
+	}
+
 require_once __DIR__ . '/config.php';
 
 // si config.php ne fournit pas $skipass_db, on le crée
@@ -28,7 +36,7 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
 <body>
   <div class="top_banner">
     <h1>Select Carte</h1>
-    <h2>POURQUOI ELLE EXISTE ?</h2>
+    <h2><?php echo "Bienvenue " . htmlspecialchars($_SESSION['login']); ?></h2>
   </div>
 
   <table border="1">
@@ -45,7 +53,11 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
         <td><?= htmlspecialchars($row[$f->name]) ?></td>
       <?php endforeach; ?>
 
-      <!-- on transmet la valeur de la première colonne (supposée clé primaire) -->
+      <!-- on transmet la valeur de la 1e colonne ( clé primaire) -->
+      <?php
+
+        if ($_SESSION['role']=="administrator") {
+      ?>
       <td>
         <form method="post" action="script_delete.php" onsubmit="return confirm('Supprimer cette ligne ?');">
           <input type="hidden" name="id" value="<?= htmlspecialchars($row[$fields[0]->name]) ?>">
@@ -53,6 +65,9 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
         </form>
       </td>
     </tr>
+    <?php
+        }
+    ?>
     <?php endwhile; ?>
   </table>
 

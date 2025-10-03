@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/config.php';
 
+
 // si config.php ne fournit pas $skipass_db, on le crée
 if (!isset($skipass_db) || !($skipass_db instanceof mysqli)) {
     $skipass_db = new mysqli($db_host,$db_user,$db_pass,$db_name, $db_port);

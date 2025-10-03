@@ -1,3 +1,12 @@
+<?php
+	session_start();
+
+	if (empty($_SESSION['logged_in'])) {
+		header("Location: login.php");
+		exit;
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +18,7 @@
 	<body>
         <div class="top_banner">
 			<h1>Ajout Carte</h1>
-			<h2>Veuillez saisir les informations</h2>
+			<h2><?php echo "Connecté en tant que " . htmlspecialchars($_SESSION['login']); ?></h2>
 		</div>
         <div class="form_div">
 			<form action="script_insert.php" method="post">
