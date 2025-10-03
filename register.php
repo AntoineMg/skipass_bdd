@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 require_once __DIR__ . '/config.php';
 
 // si config.php ne fournit pas $skipass_db, on le crée
