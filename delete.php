@@ -3,7 +3,7 @@ require_once __DIR__ . '/config.php';
 header('lolo');
 // connexion si besoin
 if (!isset($skipass_db) || !($skipass_db instanceof mysqli)) {
-    $skipass_db = new mysqli('127.0.0.1', 'root', '', 'skipass_porret_morier');
+    $skipass_db = new mysqli($db_host,$db_user,$db_pass,$db_name, $db_port);
 }
 if ($skipass_db->connect_errno) {
     die("Erreur connexion : " . $skipass_db->connect_error);
@@ -52,5 +52,5 @@ if (!$stmt->execute()) {
 $stmt->close();
 $skipass_db->close();
 
-header("Location: select.php");
+header("Location: test.php");
 exit;
