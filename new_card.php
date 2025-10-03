@@ -5,6 +5,10 @@
 		header("Location: login.php");
 		exit;
 	}
+
+    if ($_SESSION['role']!="administrator") {
+		header("Location: dashboard.php");
+	}
 ?>
 
 <!DOCTYPE html>
