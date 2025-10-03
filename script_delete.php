@@ -21,13 +21,13 @@ $id = $is_int ? (int)$id_raw : $id_raw;
 
 // Récupère le nom de la première colonne de la table (pour construire la WHERE)
 // Ceci évite d'avoir besoin du nom exact de la colonne côté client.
-$res = $skipass_db->query("SHOW COLUMNS FROM `carte`");
+$res = $skipass_db->query("SHOW COLUMNS FROM `cards`");
 if (!$res) {
     die("Impossible de lire la structure de la table: " . $skipass_db->error);
 }
 $col = $res->fetch_assoc();
 if (!$col) {
-    die("Table 'carte' vide ou erreur.");
+    die("Table 'cards' vide ou erreur.");
 }
 $pk_field = $col['Field'];
 // sécurité: n'autorise que des noms simples
@@ -35,7 +35,7 @@ if (!preg_match('/^[A-Za-z0-9_]+$/', $pk_field)) {
     die("Nom de colonne invalide.");
 }
 
-$sql = "DELETE FROM `carte` WHERE `$pk_field` = ?";
+$sql = "DELETE FROM `cards` WHERE `$pk_field` = ?";
 $stmt = $skipass_db->prepare($sql);
 if (!$stmt) {
     die("Prepare failed: (" . $skipass_db->errno . ") " . $skipass_db->error);

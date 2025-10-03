@@ -7,7 +7,7 @@
 
     $skipass_db = new mysqli($db_host,$db_user,$db_pass,$db_name, $db_port);
     
-    $sql_query = "INSERT INTO carte (numCarte, dateDebutValide, dateFinValide)
+    $sql_query = "INSERT INTO cards (numCarte, dateDebutValide, dateFinValide)
             VALUES ('$card_number', '$valid_start_date', '$valid_end_date')";
 
     if (!$skipass_db->query($sql_query)) {

@@ -10,7 +10,7 @@ if ($skipass_db->connect_errno) {
     die("Erreur connexion BDD : " . $skipass_db->connect_error);
 }
 
-$query = "SELECT * FROM carte";
+$query = "SELECT * FROM cards";
 if (!$result = $skipass_db->query($query)) {
     die("Erreur SELECT : " . $skipass_db->error);
 }
