@@ -16,38 +16,28 @@ if ($skipass_db->connect_errno) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div class="top_banner">
-        <h1>Créer un compte</h1>
+        <h1>Se connecter</h1>
         <h2>Saisir vos informations</h2>
     </div>
     <div class="form_div">
-			<form action="script_register.php" method="post">
-				<div class="form_item">
-					<label for="first-name">Prénom : </label>
-					<input type="text" name="first-name" required/>
-				</div>
-				<br/>
-                <div class="form_item">
-					<label for="last-name">Nom : </label>
-					<input type="text" name="last-name" required/>
-				</div>
-				<br/>
+			<form action="script_login.php" method="post">
                 <div class="form_item">
 					<label for="login">Login : </label>
-					<input type="text" name="login" required minlength="3" maxlength="20" pattern="[A-Za-z0-9_]+" required/>
+					<input type="text" name="login"/>
 				</div>
                 <br/>
                 <div class="form_item">
 					<label for="password">Mot de passe : </label>
-					<input type="password" name="password" required minlength="8"/>
+					<input type="password" name="password"/>
 				</div>
                 <br/>
 				<div class="form_buttons">
-					<input type="submit" name="register_employee" value="S'inscrire"/>
+					<input type="submit" name="login_employee" value="Se connecter"/>
 				</div>
 			</form>
 		</div> 
