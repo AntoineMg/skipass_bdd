@@ -9,6 +9,11 @@ if (!isset($skipass_db) || !($skipass_db instanceof mysqli)) {
 if ($skipass_db->connect_errno) {
     die("Erreur connexion BDD : " . $skipass_db->connect_error);
 }
+
+if ($_SESSION['logged_in']) {
+    header("Location: dashboard.php");
+    exit;
+}
 ?>
 
 <!doctype html>
