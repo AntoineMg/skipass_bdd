@@ -32,13 +32,13 @@
 				</div>
 				<br/>
                 <div class="form_item">
-					<label for="valid_start_date">Date de début de validité : </label>
-					<input type="date" name="valid_start_date"/>
+					<label for="valid_from">Date de début de validité : </label>
+					<input type="date" name="valid_from"/>
 				</div>
                 <br/>
                 <div class="form_item">
-					<label for="valid_end_date">Date de fin de validité : </label>
-					<input type="date" name="valid_end_date"/>
+					<label for="valid_to">Date de fin de validité : </label>
+					<input type="date" name="valid_to"/>
 				</div>
                 <br/>
 				<div class="form_buttons">

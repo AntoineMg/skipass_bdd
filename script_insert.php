@@ -5,13 +5,13 @@ session_start();
 require_once __DIR__ . '/config.php';
 
 $card_number = $_POST["num_carte"];
-$valid_start_date = $_POST["valid_start_date"];
-$valid_end_date = $_POST["valid_end_date"];
+$valid_from = $_POST["valid_from"];
+$valid_to = $_POST["valid_to"];
 
 $skipass_db = new mysqli($db_host, $db_user, $db_pass, $db_name, $db_port);
 
-$sql_query = "INSERT INTO cards (numCarte, dateDebutValide, dateFinValide)
-            VALUES ('$card_number', '$valid_start_date', '$valid_end_date')";
+$sql_query = "INSERT INTO cards (card_num, valid_from, valid_to)
+            VALUES ('$card_number', '$valid_from', '$valid_to')";
 
 echo "<div class=\"message-container\">";
 
