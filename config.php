@@ -2,15 +2,15 @@
 //Recup env
     $env_file = __DIR__ . '/.env'; 
 
-    // Lit le fichier si il existe
     if (file_exists($env_file)) {
         foreach (file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
-            // Ignore les commentaires
+
+            //ignorer commentaires
             if (strpos(trim($line), '#') === 0) continue;
 
-            // Sépare clé=valeur
+            //separer key et values
             list($key, $value) = explode('=', $line, 2);
-            putenv("$key=$value");  // Définit la variable pour le script PHP
+            putenv("$key=$value");
         }
     }
 

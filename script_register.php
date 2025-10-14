@@ -21,7 +21,7 @@
         echo "Employé " . $first_name . " " .$last_name . " ajouté avec grand succès 👍";
     }
 
-    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">";
+    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/style.css\">";
     echo "<a href=\"index.html\">Menu</a>";
 
     echo "</div>";

@@ -20,7 +20,7 @@ if (!$skipass_db->query($sql_query)) {
 } else {
     echo "🤖 Carte n°" . $card_number . " ajoutée avec grand succès 👍";
 }
-echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">";
-echo "<a href=\"dashboard.php\">Menu</a>";
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/style.css\">";
+echo "<a href=\"new_card.php\">Retour</a>";
 
 echo "</div>";

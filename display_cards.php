@@ -9,7 +9,7 @@
 
 require_once __DIR__ . '/config.php';
 
-// si config.php ne fournit pas $skipass_db, on le crée
+//creation skipass db
 if (!isset($skipass_db) || !($skipass_db instanceof mysqli)) {
     $skipass_db = new mysqli($db_host,$db_user,$db_pass,$db_name, $db_port);
 }
@@ -18,6 +18,7 @@ if ($skipass_db->connect_errno) {
     die("Erreur connexion BDD : " . $skipass_db->connect_error);
 }
 
+//Recup cartes
 $query = "SELECT * FROM cards";
 if (!$result = $skipass_db->query($query)) {
     die("Erreur SELECT : " . $skipass_db->error);
@@ -31,7 +32,7 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Select</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/style.css">
 </head>
 <body>
   <div class="top_banner">
@@ -72,7 +73,7 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
   </table>
 
   <br>
-  <a href="dashboard.php">Menu</a>
+  <a href="dashboard.php">Retour au tableau de bord</a>
 </body>
 </html>
 

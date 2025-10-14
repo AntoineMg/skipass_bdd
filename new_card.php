@@ -16,12 +16,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Formulaire Ajout Carte</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Ajouter une carte</title>
+		<link rel="stylesheet" type="text/css" href="/assets/style.css">
 	</head>
 	<body>
         <div class="top_banner">
-			<h1>Ajout Carte</h1>
+			<h1>Ajouter une carte</h1>
 			<h2><?php echo "Connecté en tant que " . htmlspecialchars($_SESSION['login']); ?></h2>
 		</div>
         <div class="form_div">
@@ -46,6 +46,6 @@
 				</div>
 			</form>
 		</div> 
-		<a href="index.html">Menu </a>
+		<a href="dashboard.php">Retour au tableau de bord</a>
 	</body>
 </html>

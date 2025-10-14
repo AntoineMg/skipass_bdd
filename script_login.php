@@ -39,7 +39,7 @@
     }    
 
 
-    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">";
+    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/style.css\">";
     echo "<a href=\"login.php\">Retour au login</a>";
 
     echo "</div>";

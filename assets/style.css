@@ -14,7 +14,7 @@ body {
     position: relative; /* référence pour pseudo-éléments */
 
     /* background montagne */
-    background-image: url('background.png');
+    background-image: url('/assets/background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -28,7 +28,7 @@ body::before {
     left: 20px;
     width: 250px;
     height: 250px;
-    background-image: url('logo.png');
+    background-image: url('/assets/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
