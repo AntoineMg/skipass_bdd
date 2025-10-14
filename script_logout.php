@@ -27,7 +27,7 @@ session_destroy();
 echo "<div class=\"message-container\">";
 echo "Vous êtes déconnecté.<br>";
 
-echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/style.css\">";
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/style.css\">";
 echo "<a href=\"index.html\">Menu</a>";
 
 echo "</div>";
