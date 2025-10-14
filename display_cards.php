@@ -72,7 +72,7 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
   </table>
 
   <br>
-  <a href="index.html">Menu</a>
+  <a href="dashboard.php">Menu</a>
 </body>
 </html>
 

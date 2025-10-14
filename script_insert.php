@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once __DIR__ . '/config.php';
 
 $card_number = $_POST["num_carte"];
@@ -18,6 +21,6 @@ if (!$skipass_db->query($sql_query)) {
     echo "🤖 Carte n°" . $card_number . " ajoutée avec grand succès 👍";
 }
 echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">";
-echo "<a href=\"index.html\">Menu</a>";
+echo "<a href=\"dashboard.php\">Menu</a>";
 
 echo "</div>";

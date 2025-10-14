@@ -32,7 +32,7 @@ CREATE TABLE `cards` (
   `numCarte` int UNSIGNED NOT NULL,
   `dateDebutValide` date NOT NULL,
   `dateFinValide` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `cards`
@@ -55,9 +55,9 @@ CREATE TABLE `employees` (
   `first_name` varchar(30) DEFAULT NULL,
   `last_name` varchar(30) DEFAULT NULL,
   `login` varchar(30) DEFAULT NULL,
-  `password` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `password` varchar(40) CHARACTER SET utf8mb4 DEFAULT NULL,
   `role_id` int UNSIGNED DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `employees`
@@ -75,7 +75,7 @@ INSERT INTO `employees` (`employee_id`, `first_name`, `last_name`, `login`, `pas
 CREATE TABLE `roles` (
   `role_id` int UNSIGNED NOT NULL,
   `role_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
 
 --
 -- Déchargement des données de la table `roles`

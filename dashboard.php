@@ -25,9 +25,10 @@
 		<?php
 			if ($_SESSION['role']=="administrator") {
 		?>
-		<a href="new_card.html">Inserer nouvelle carte</a>
+		<a href="new_card.php">Inserer nouvelle carte</a>
 			<?php
 		}
 		?>
 		<a href="display_cards.php">Afficher cartes</a>
+		<a href="script_logout.php">Logout</a>
     </body>
