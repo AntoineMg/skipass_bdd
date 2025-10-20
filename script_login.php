@@ -1,20 +1,16 @@
 <?php
-    session_start();
-    
     require_once __DIR__ . '/config.php';
+    session_start();
+    $cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
     $login = $_POST["login"];
     $password = $_POST["password"];
     $skipass_db = new mysqli($db_host,$db_user,$db_pass,$db_name, $db_port);
-    $hash_password = password_hash($password, PASSWORD_DEFAULT);   
-
-
-    
 
     $result = $skipass_db->query("SELECT * FROM employees WHERE login = '$login'");
     if ($result && $row = $result->fetch_assoc()) {
         $db_hash_password = $row['password'];
-        if ($hash_password == $db_hash_password) {
+        if (password_verify($password,$db_hash_password)) {
             //INFOS SESSION
             //recup nom prenom
             $_SESSION['firstname']=$row['first_name'];
@@ -39,7 +35,7 @@
     }    
 
 
-    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/style.css\">";
+    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$cssFile\">";
     echo "<a href=\"login.php\">Retour au login</a>";
 
     echo "</div>";

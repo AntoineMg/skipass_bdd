@@ -1,10 +1,10 @@
 <?php
+require_once __DIR__ . '/config.php';
 session_start();
+$cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
 // Vider les données de session
 $_SESSION = [];
-
-require_once __DIR__ . '/config.php';
 
 
 // TODO
@@ -27,8 +27,8 @@ session_destroy();
 echo "<div class=\"message-container\">";
 echo "Vous êtes déconnecté.<br>";
 
-echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/style.css\">";
-echo "<a href=\"index.html\">Menu</a>";
+echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$cssFile\">";
+echo "<a href=\"index.php\">Menu</a>";
 
 echo "</div>";
 

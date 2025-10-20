@@ -1,9 +1,7 @@
 <?php
-
-session_start();
 require_once __DIR__ . '/config.php';
-
-
+session_start();
+$cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
 //creation skipass db
 if (!isset($skipass_db) || !($skipass_db instanceof mysqli)) {
@@ -27,7 +25,7 @@ if (!empty($_SESSION['logged_in'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars($cssFile) ?>">
 </head>
 <body>
     <div class="top_banner">
@@ -51,6 +49,6 @@ if (!empty($_SESSION['logged_in'])) {
 				</div>
 			</form>
 		</div> 
-    <a href="index.html">Menu</a>
+    <a href="index.php">Menu</a>
 </body>
 </html>

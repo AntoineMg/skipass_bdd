@@ -1,0 +1,267 @@
+/* =======================
+   GLOBAL
+======================= */
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #00ff00; /* fluo vert de malade */
+    position: relative;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00); /* explosion de fluo */
+}
+
+/* ===== LOGO ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 180px;
+    height: 180px;
+    background-image: url('logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ===== OVERLAY ===== */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* =======================
+   TITRES
+======================= */
+h1 {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    background: #ff00ff;
+    color: #00ff00;
+    padding: 20px;
+    border: 5px dashed #ffff00;
+    font-size: 3em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #0000ff, -2px -2px #ff0000;
+}
+
+h2 {
+    color: #00ffff;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 1px 1px #ff00ff;
+}
+
+/* =======================
+   TEXTES
+======================= */
+.Texte1 {
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+    color: #ff00ff;
+    text-shadow: 1px 1px #00ffff;
+    margin-bottom: 10px;
+}
+
+.Texte2 {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: #ffff00;
+    text-shadow: 1px 1px #ff00ff;
+    margin-bottom: 10px;
+}
+
+/* =======================
+   BANNIÈRE
+======================= */
+.top_banner {
+    border: 3px dotted #00ff00;
+    border-radius: 0;
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background: #ff00ff;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    color: #00ffff;
+}
+
+/* =======================
+   LISTES
+======================= */
+#first_list:hover {
+    color: #ffff00;
+    cursor: pointer;
+    text-decoration: underline wavy red;
+}
+
+/* =======================
+   FORMULAIRE
+======================= */
+.form_div {
+    display: grid;
+    gap: 10px;
+    max-width: 420px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    background: #00ffff;
+    border: 3px double #ff00ff;
+    border-radius: 0;
+}
+
+.form_item {
+    padding: 10px;
+    border-bottom: 2px dashed #ff00ff;
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* =======================
+   TABLES
+======================= */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+    background: #ff00ff;
+    border: 3px solid #00ff00;
+}
+
+td, th {
+    border: 2px dotted #ffff00;
+    padding: 12px;
+    text-align: center;
+    color: #00ffff;
+    font-weight: bold;
+}
+
+th {
+    background-color: #00ff00;
+    color: #ff00ff;
+    text-shadow: 1px 1px #0000ff;
+}
+
+/* =======================
+   LIENS / BOUTONS
+======================= */
+a {
+    display: inline-block;
+    border: 3px dashed #ffff00;
+    background-color: #ff0000;
+    border-radius: 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+}
+
+a:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+/* =======================
+   MESSAGE
+======================= */
+.message-container {
+    background-color: #00ff00;
+    color: #ff00ff;
+    border: 3px dotted #0000ff;
+    padding: 20px;
+    border-radius: 0;
+    font-size: 16px;
+    max-width: 400px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.message-container a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff00ff;
+    color: #00ffff;
+    text-decoration: none;
+    border: 2px dashed #ffff00;
+    font-weight: bold;
+}
+
+/* =======================
+   INPUTS / SUBMIT
+======================= */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 3px dashed #ff00ff;
+    border-radius: 0;
+    background-color: #00ffff;
+    color: #ff00ff;
+    outline: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    box-shadow: 0 0 8px #ffff00, 0 0 12px #ff00ff;
+    transform: scale(1.03);
+}
+
+/* =======================
+   BOUTONS SUBMIT
+======================= */
+input[type="submit"],
+button[type="submit"] {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #ff00ff;
+    color: #00ff00;
+    border: 3px dashed #ffff00;
+    border-radius: 0;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #00ffff;
+    color: #ff00ff;
+    transform: rotate(-3deg) scale(1.05);
+}

@@ -1,6 +1,8 @@
 <?php
-
+    require_once __DIR__ . '/config.php';
 	session_start();
+    $cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
+    
 
 	if (empty($_SESSION['logged_in'])) {
 		header("Location: login.php");

@@ -1,5 +1,8 @@
 <?php
+	require_once __DIR__ . '/config.php';
 	session_start();
+	$cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
+
 
 	if (empty($_SESSION['logged_in'])) {
 		header("Location: login.php");
@@ -14,7 +17,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Skipass</title>
-		<link rel="stylesheet" type="text/css" href="assets/style.css">
+		<link rel="stylesheet" href="<?= htmlspecialchars($cssFile) ?>">
 	</head>
     <body>
         <div class="top_banner">

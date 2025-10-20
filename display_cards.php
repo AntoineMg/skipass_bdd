@@ -1,13 +1,14 @@
 <?php
 
+  require_once __DIR__ . '/config.php';
 	session_start();
+  $cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
 	if (empty($_SESSION['logged_in'])) {
 		header("Location: login.php");
 		exit;
 	}
 
-require_once __DIR__ . '/config.php';
 
 //creation skipass db
 if (!isset($skipass_db) || !($skipass_db instanceof mysqli)) {
@@ -32,7 +33,7 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Affichage des cartes</title>
-  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <link rel="stylesheet" href="<?= htmlspecialchars($cssFile) ?>">
 </head>
 <body>
   <div class="top_banner">
@@ -45,7 +46,9 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
     <?php foreach ($fields as $f): ?>
       <th><?= htmlspecialchars($f->name) ?></th>
     <?php endforeach; ?>
-    <th>Action</th>
+    <?php if ($_SESSION['role']=="administrator"): ?>
+      <th>Suppression</th>
+    <?php endif; ?>
   </tr>
 
   <?php while ($row = $result->fetch_assoc()): ?>

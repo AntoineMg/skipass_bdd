@@ -1,0 +1,234 @@
+/* =======================
+   GLOBAL
+======================= */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    position: relative;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ===== LOGO ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 180px;
+    height: 180px;
+    background-image: url('logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ===== OVERLAY ===== */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,0,255,0.1), rgba(0,255,255,0.1));
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== CONTENU ===== */
+body > * {
+    position: relative;
+    z-index: 3;
+}
+
+/* =======================
+   TITRES
+======================= */
+h1 {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    background: #0ff;
+    color: #ff0;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #f0f, 0 0 40px #0ff;
+    font-weight: 700;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #ff00ff;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 10px 0 20px;
+    text-shadow: 0 0 8px #ff00ff, 0 0 12px #00ffff;
+}
+
+/* =======================
+   TEXTES
+======================= */
+.Texte1 {
+    font-style: italic;
+    font-size: 16px;
+    text-align: center;
+    color: #00ffff;
+    margin-bottom: 12px;
+}
+
+.Texte2 {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #ff00ff;
+    margin-bottom: 12px;
+}
+
+/* =======================
+   BANNIÈRE
+======================= */
+.top_banner {
+    border: 2px solid #ff00ff;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    padding: 16px;
+    background: #1a1a2e;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 700;
+    color: #00ffff;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+}
+
+/* =======================
+   LISTES
+======================= */
+#first_list:hover {
+    color: #ff00ff;
+    cursor: pointer;
+}
+
+/* =======================
+   FORMULAIRE
+======================= */
+.form_div {
+    display: grid;
+    gap: 14px;
+    max-width: 420px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    background: #1a1a2e;
+    border-radius: 16px;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+    border: 2px solid #ff00ff;
+}
+
+.form_item {
+    padding: 8px;
+    border-bottom: 1px solid #ff00ff;
+}
+
+.form_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* =======================
+   TABLES
+======================= */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+    background: #1a1a2e;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+td, th {
+    border: 1px solid #ff00ff;
+    padding: 12px 16px;
+    text-align: center;
+    color: #00ffff;
+}
+
+th {
+    background-color: #ff00ff;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-shadow: 0 0 5px #ff0, 0 0 8px #0ff;
+}
+
+/* =======================
+   LIENS / BOUTONS
+======================= */
+a {
+    display: inline-block;
+    border: 2px solid #ff00ff;
+    background-color: #0ff;
+    border-radius: 12px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #1a1a2e;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 0 8px #0ff, 0 0 12px #f0f;
+}
+
+a:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 12px #f0f, 0 0 20px #0ff;
+}
+
+/* =======================
+   MESSAGE
+======================= */
+.message-container {
+    background-color: #2a2a4e;
+    color: #00ffff;
+    border: 2px solid #ff00ff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+    max-width: 400px;
+    margin: 14px 0;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+}
+
+.message-container a {
+    display: block;
+    text-align: center;
+    margin-top: auto;
+    padding: 8px 16px;
+    background-color: #ff00ff;
+    color: #1a1a2e;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0 0 8px #f0f, 0 0 12px #0ff;
+}

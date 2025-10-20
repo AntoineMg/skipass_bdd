@@ -1,0 +1,308 @@
+/* =======================
+   GLOBAL
+======================= */
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1b1b1b;
+    position: relative;
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ===== LOGO ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 250px;
+    height: 250px;
+    background-image: url('logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== OVERLAY ===== */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ===== CONTENU ===== */
+body > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* =======================
+   TITRES
+======================= */
+h1 {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #005f73;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 10px 0 20px;
+}
+
+/* =======================
+   TEXTES
+======================= */
+.Texte1 {
+    font-style: italic;
+    font-size: 15px;
+    text-align: center;
+    color: #3a5a6a;
+    margin-bottom: 10px;
+}
+
+.Texte2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    color: #0a3d62;
+    margin-bottom: 10px;
+}
+
+/* =======================
+   BANNIÈRE
+======================= */
+.top_banner {
+    border: 3px double #1b3b5a;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    padding: 14px;
+    background: #e0f7fa;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+    color: #003459;
+}
+
+/* =======================
+   LISTES
+======================= */
+#first_list:hover {
+    color: #0077b6;
+    cursor: pointer;
+}
+
+/* =======================
+   FORMULAIRE + INPUTS
+======================= */
+.form_div {
+    display: grid;
+    gap: 14px;
+    max-width: 420px;
+    width: 100%;
+    margin: 20px 0;
+    padding: 18px;
+    background: #e0f7fa;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    border: 1px solid #00b4d8;
+}
+
+.form_item {
+    padding: 6px;
+    border-bottom: 1px solid #00b4d8;
+}
+
+/* Inputs harmonisés */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    padding: 8px 10px;
+    border: 2px solid #0077b6;
+    border-radius: 6px;
+    background-color: #e0f7fa;
+    color: #003459;
+    outline: none;
+    transition: all 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #00b4d8;
+    background-color: #d0f4f7;
+}
+
+/* Submit / Boutons harmonisés */
+input[type="submit"],
+button[type="submit"] {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: #00b4d8;
+    color: #fff;
+    border: 2px solid #0077b6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #0077b6;
+    transform: scale(1.05);
+}
+
+/* =======================
+   TABLES
+======================= */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 700px;
+    background: #e0f7fa;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+td, th {
+    border: 1px solid #00b4d8;
+    padding: 10px 14px;
+    text-align: center;
+}
+
+th {
+    background-color: #0077b6;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* =======================
+   LIENS / BOUTONS
+======================= */
+a {
+    display: inline-block;
+    border: 2px solid #0077b6;
+    background-color: #00b4d8;
+    border-radius: 8px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+a:hover {
+    background-color: #0077b6;
+    transform: scale(1.05);
+}
+
+/* =======================
+   MESSAGE
+======================= */
+.message-container {
+    background-color: #d0f4f7;
+    color: #003459;
+    border: 1px solid #00b4d8;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    max-width: 400px;
+    margin: 12px 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130px;
+}
+
+.message-container a {
+    display: block;
+    text-align: center;
+    margin-top: auto;
+    padding: 6px 12px;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* =======================
+   SNOW EFFECT
+======================= */
+html {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.snow, .snow:before, .snow:after {
+  content: "";
+  position: absolute;
+  top: -600px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(6px 6px at 100px 120px, rgba(255,255,255,0.5) 50%, transparent 51%);
+  background-size: 600px 600px;
+  animation: snow 3s linear infinite;
+}
+
+.snow:after {
+  margin-left: -200px;
+  opacity: .4;
+  animation-duration: 6s;
+  animation-direction: reverse;
+  filter: blur(3px);
+}
+
+.snow:before {
+  margin-left: -300px;
+  opacity: .65;
+  animation-duration: 9s;
+  animation-direction: reverse;
+  filter: blur(1.5px);
+}
+
+@keyframes snow {
+  to { transform: translateY(600px); }
+}

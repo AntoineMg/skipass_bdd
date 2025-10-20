@@ -1,6 +1,7 @@
 <?php
 
     require_once __DIR__ . '/config.php';
+    $cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
     $first_name = $_POST["first-name"];
     $last_name = $_POST["last-name"];
@@ -19,11 +20,11 @@
     if (!$skipass_db->query($sql_query)) {
         echo "SQL ERROR : " . $skipass_db->error;
     } else {
-        echo "Employé " . $first_name . " " .$last_name . " ajouté avec grand succès 👍";
+        echo "Employé " . $first_name . " " .$last_name . " ajouté avec grand succès 👍";  
     }
 
-    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/style.css\">";
-    echo "<a href=\"index.html\">Menu</a>";
+    echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$cssFile\">";
+    echo "<a href=\"index.php\">Menu</a>";
 
     echo "</div>";
 
