@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/config.php';
 session_start();
-$cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
 $card_number = $_POST["num_carte"];
 $valid_from = $_POST["valid_from"];

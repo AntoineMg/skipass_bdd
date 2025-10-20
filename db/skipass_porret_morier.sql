@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : mar. 14 oct. 2025 à 09:38
+-- Généré le : lun. 20 oct. 2025 à 15:20
 -- Version du serveur : 8.0.43
 -- Version de PHP : 8.2.27
 
@@ -39,8 +39,8 @@ CREATE TABLE `cards` (
 --
 
 INSERT INTO `cards` (`card_id`, `card_num`, `valid_from`, `valid_to`) VALUES
-(13, 1001, '2025-10-17', '2025-10-31'),
-(14, 1002, '2026-01-13', '2026-01-22');
+(14, 1002, '2026-01-13', '2026-01-29'),
+(15, 5612, '2026-02-06', '2026-03-07');
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE `employees` (
   `first_name` varchar(30) DEFAULT NULL,
   `last_name` varchar(30) DEFAULT NULL,
   `login` varchar(30) DEFAULT NULL,
-  `password` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `role_id` int UNSIGNED DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -62,8 +62,8 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`employee_id`, `first_name`, `last_name`, `login`, `password`, `role_id`) VALUES
-(20, 'admin', 'admin', 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 2),
-(21, 'user', 'user', 'user', '12dea96fec20593566ab75692c9949596833adc9', 1);
+(29, 'user', 'user', 'user', '$2y$10$biYrjxK1u4axkfKibUmXUuH7uH2Jtv2l7C8.vk3qZ1tNsL8uVUunq', 1),
+(30, 'admin', 'admin', 'admin', '$2y$10$eJ.zaXe1c7fJp1MvbamF/.bqvPgI1pEYWeBEdeRnE.8zpSTPa4LOa', 2);
 
 -- --------------------------------------------------------
 
@@ -115,13 +115,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT pour la table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `card_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `card_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `employee_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT pour la table `roles`

@@ -1,7 +1,6 @@
 <?php
-
+    require_once __DIR__ . '/config.php';
 	session_start();
-    $cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
 	if (empty($_SESSION['logged_in'])) {
 		header("Location: login.php");
@@ -11,7 +10,7 @@
         header("Location: display_cards.php");
     };
 
-require_once __DIR__ . '/config.php';
+
 
 // connexion a la db
 if (!isset($skipass_db) || !($skipass_db instanceof mysqli)) {

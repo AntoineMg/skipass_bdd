@@ -1,7 +1,6 @@
 <?php
 
     require_once __DIR__ . '/config.php';
-    $cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
 
     $first_name = $_POST["first-name"];
     $last_name = $_POST["last-name"];

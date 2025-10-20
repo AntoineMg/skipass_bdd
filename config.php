@@ -20,4 +20,6 @@
     $db_name = getenv('DB_NAME');
     $db_port = getenv('DB_PORT');
 
+    $cssFile = getenv('THEME_CSS') ?: 'css/style1.css';
+
 ?>
