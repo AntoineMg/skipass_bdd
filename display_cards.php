@@ -40,37 +40,47 @@ $fields = $result->fetch_fields(); // noms de colonnes pour l'entête
     <h2><?php echo "Bienvenue " . htmlspecialchars($_SESSION['login']); ?></h2>
   </div>
 
-  <table border="1">
-    <tr>
-      <?php foreach ($fields as $f): ?>
-        <th><?= htmlspecialchars($f->name) ?></th>
-      <?php endforeach; ?>
-      <th>Action</th>
-    </tr>
+<table border="1">
+  <tr>
+    <?php foreach ($fields as $f): ?>
+      <th><?= htmlspecialchars($f->name) ?></th>
+    <?php endforeach; ?>
+    <th>Action</th>
+  </tr>
 
-    <?php while ($row = $result->fetch_assoc()): ?>
-    <tr>
-      <?php foreach ($fields as $f): ?>
-        <td><?= htmlspecialchars($row[$f->name]) ?></td>
-      <?php endforeach; ?>
+  <?php while ($row = $result->fetch_assoc()): ?>
+  <tr>
+    <?php foreach ($fields as $f): ?>
+      <td>
+        <?= htmlspecialchars($row[$f->name]) ?>
+        <?php 
+          //detection date
+          if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $row[$f->name])): 
+        ?>
+          <!-- btn modif date-->
+          <form method="post" action="script_modify.php" style="display:inline;">
+            <input type="hidden" name="id" value="<?= htmlspecialchars($row[$fields[0]->name]) ?>">
+            <input type="hidden" name="field" value="<?= htmlspecialchars($f->name) ?>">
+            <input type="date" name="new_date" value="<?= htmlspecialchars($row[$f->name]) ?>">
+            <input type="submit" value="✔️" title="Enregistrer">
+          </form>
+        <?php endif; ?>
+      </td>
+    <?php endforeach; ?>
 
-      <!-- on transmet la valeur de la 1e colonne ( clé primaire) -->
-      <?php
-
-        if ($_SESSION['role']=="administrator") {
-      ?>
+    <!-- suppression -->
+    <?php if ($_SESSION['role']=="administrator"): ?>
       <td>
         <form method="post" action="script_delete.php" onsubmit="return confirm('Supprimer cette ligne ?');">
           <input type="hidden" name="id" value="<?= htmlspecialchars($row[$fields[0]->name]) ?>">
-          <input type="submit" value="Supprimer">
+          <input type="submit" value="❌">
         </form>
       </td>
-    </tr>
-    <?php
-        }
-    ?>
-    <?php endwhile; ?>
-  </table>
+    <?php endif; ?>
+  </tr>
+  <?php endwhile; ?>
+</table>
+
 
   <br>
   <a href="dashboard.php">Retour au tableau de bord</a>
