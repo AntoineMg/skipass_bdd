@@ -9,10 +9,11 @@
 
     $skipass_db = new mysqli($db_host,$db_user,$db_pass,$db_name, $db_port);
     
-    $sha_password=sha1($password);
+    //methode de hash bcrypt => plus safe que sha
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);     
 
     $sql_query = "INSERT INTO employees (first_name, last_name, login, password)
-            VALUES ('$first_name', '$last_name', '$login', '$sha_password')";
+            VALUES ('$first_name', '$last_name', '$login', '$hash_password')";
 
     echo"<div class=\"message-container\">";
     if (!$skipass_db->query($sql_query)) {

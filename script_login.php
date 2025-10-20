@@ -6,15 +6,15 @@
     $login = $_POST["login"];
     $password = $_POST["password"];
     $skipass_db = new mysqli($db_host,$db_user,$db_pass,$db_name, $db_port);
-    $sha_password = sha1($password);
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);   
 
 
     
 
     $result = $skipass_db->query("SELECT * FROM employees WHERE login = '$login'");
     if ($result && $row = $result->fetch_assoc()) {
-        $db_sha_password = $row['password'];
-        if ($sha_password == $db_sha_password) {
+        $db_hash_password = $row['password'];
+        if ($hash_password == $db_hash_password) {
             //INFOS SESSION
             //recup nom prenom
             $_SESSION['firstname']=$row['first_name'];
